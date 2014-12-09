@@ -1,0 +1,93 @@
+<script type="text/html" id="tpl-home">
+	<div>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"> Scryn </a>
+			</div>
+		</nav>
+		<div class="list-group>
+	
+	            
+<!-- 			<input type="text" class="form-control" placeholder="votre login" name="login"> -->
+<!-- 			<input type="password" class="form-control" placeholder="votre mot de passe" name="password"> -->
+<!-- 			<a class="list-group-item" href="#"></a> -->
+<!-- 			<a class="list-group-item" href="#connect" onclick="login()"> -->
+<!-- 				<h4 class="list-group-item-heading">Enter</h4> -->
+<!-- 			</a> -->
+			<a class="list-group-item" href="#new">
+				<h4 class="list-group-item-heading">
+					<span class="glyphicon glyphicon-user"></span> Create a profile
+				</h4>
+			</a>
+			<a class="list-group-item" href="#photo">
+				<h4 class="list-group-item-heading">Test Photo</h4>
+			</a>
+			<a class="list-group-item" href="#events">
+				<h4 class="list-group-item-heading">Test Events</h4>
+			</a>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="tpl-connect">
+    <div>
+        <div>
+            <h1 class="header"<h1>Scryn</h1></div>
+        </div>
+        <div>
+            <p>PSEUDO :</p>
+			<ul class="list">
+				{{#user}}
+                <li>{{.}}</li>
+                {{/user}}
+			</ul>
+        </div>
+		<div>
+            <p>PASSWORD :</p>
+			<ul class="list">
+				{{#password}}
+                <li>{{.}}</li>
+                {{/password}}
+			</ul>
+        </div>
+    </div>
+ </script>
+
+<script type="text/html" id="tpl-new">
+    <div>
+        <div>
+            <h1 class="header"<h1>Scryn</h1></div>
+        </div>
+        <div>
+            <ul class="list">
+                <li >
+                    <a href="#connect">New user!</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+ </script>
+
+<script type="text/html" id="tpl-photo">
+    <div>
+        <div>
+            <h1 class="header">Scryn</h1>
+        </div>
+        <div>
+            <button onclick="capturePhoto()" class="button button-block button-primary">Take Photo</button>
+      		<img src="{{image.src}}" style="max-width: 100%">
+        </div>
+    </div>
+ </script>
+ 
+ <script type="text/html" id="tpl-events">
+    <div>
+        <div>
+            <h1 class="header"<h1>Scryn</h1></div>
+        </div>
+		<button onclick="getEvents()"> Show events </button>
+        <div id="events">
+        </div>
+		<div class="test1"></div><div class="test2"></div>
+    </div>
+ </script>
