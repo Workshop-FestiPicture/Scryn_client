@@ -7,13 +7,10 @@
 		</nav>
 		<div class="list-group>
 	
-	            
-<!-- 			<input type="text" class="form-control" placeholder="votre login" name="login"> -->
-<!-- 			<input type="password" class="form-control" placeholder="votre mot de passe" name="password"> -->
-<!-- 			<a class="list-group-item" href="#"></a> -->
-<!-- 			<a class="list-group-item" href="#connect" onclick="login()"> -->
-<!-- 				<h4 class="list-group-item-heading">Enter</h4> -->
-<!-- 			</a> -->
+			<a class="list-group-item" href="#"></a>
+			<a class="list-group-item" href="#connect" onclick="login()">
+ 				<h4 class="list-group-item-heading">Enter</h4>
+			</a>
 			<a class="list-group-item" href="#new">
 				<h4 class="list-group-item-heading">
 					<span class="glyphicon glyphicon-user"></span> Create a profile
@@ -32,23 +29,15 @@
 <script type="text/html" id="tpl-connect">
     <div>
         <div>
-            <h1 class="header"<h1>Scryn</h1></div>
+            <h1 class="header">Scryn</h1>
         </div>
         <div>
-            <p>PSEUDO :</p>
-			<ul class="list">
-				{{#user}}
-                <li>{{.}}</li>
-                {{/user}}
-			</ul>
+            <h2> Choose an event </h2>
+			<button onclick="getEvents()"> Show events </button>
+        	<div id="events"></div>
         </div>
 		<div>
-            <p>PASSWORD :</p>
-			<ul class="list">
-				{{#password}}
-                <li>{{.}}</li>
-                {{/password}}
-			</ul>
+          
         </div>
     </div>
  </script>
@@ -58,12 +47,12 @@
         <div>
             <h1 class="header"<h1>Scryn</h1></div>
         </div>
-        <div>
-            <ul class="list">
-                <li >
-                    <a href="#connect">New user!</a>
-                </li>
-            </ul>
+        <div id="new">
+				<input type="text" class="form-control" placeholder="votre login" name="user" id="user">
+				<input type="password" class="form-control" placeholder="votre mot de passe" name="password" id="password">
+            	<button onclick="login()" type="submit">New user</button>
+		<div id="link"></div>
+		<div id="name"></div>
         </div>
     </div>
  </script>
@@ -79,12 +68,13 @@
         </div>
     </div>
  </script>
- 
- <script type="text/html" id="tpl-events">
+
+<script type="text/html" id="tpl-events">
     <div>
         <div>
             <h1 class="header"<h1>Scryn</h1></div>
         </div>
+		<div id="user"></div>
 		<button onclick="getEvents()"> Show events </button>
         <div id="events">
         </div>

@@ -5,26 +5,22 @@
 				<a class="navbar-brand" href="#"> Scryn </a>
 			</div>
 		</nav>
-		<div class="list-group>
-	
-	            
-			<input type="text" class="form-control" placeholder="votre login" name="login">
-			<input type="password" class="form-control" placeholder="votre mot de passe" name="password">
-			<a class="list-group-item" href="#"></a>
-			<a class="list-group-item" href="#connect" onclick="login()">
- 				<h4 class="list-group-item-heading">Enter</h4>
-			</a>
-			<a class="list-group-item" href="#new">
+
+		<input type="text" class="form-control" placeholder="votre login" name="user" id="user">
+		<input type="password" class="form-control" placeholder="votre mot de passe" name="password" id="password">
+
+ 			<button class="btn btn-default" onclick="login()">
+				<h4 class="list-group-item-heading">Login</h4>
+			</button>
+			<button class="btn btn-default" onclick="register()">
 				<h4 class="list-group-item-heading">
 					<span class="glyphicon glyphicon-user"></span> Create a profile
 				</h4>
-			</a>
+			</button>
 			<a class="list-group-item" href="#photo">
 				<h4 class="list-group-item-heading">Test Photo</h4>
 			</a>
-			<a class="list-group-item" href="#events">
-				<h4 class="list-group-item-heading">Test Events</h4>
-			</a>
+			<div id="status"></div>
 		</div>
 	</div>
 </script>
@@ -32,24 +28,14 @@
 <script type="text/html" id="tpl-connect">
     <div>
         <div>
-            <h1 class="header"<h1>Scryn</h1></div>
+            <h1 class="header">Scryn</h1>
         </div>
         <div>
-            <p>PSEUDO :</p>
-			<ul class="list">
-				{{#user}}
-                <li>{{.}}</li>
-                {{/user}}
-			</ul>
+            <h2> Choose an event </h2>
+			<button onclick="getEvents()"> Show events </button>
+        	<div id="events"></div>
         </div>
-		<div>
-            <p>PASSWORD :</p>
-			<ul class="list">
-				{{#password}}
-                <li>{{.}}</li>
-                {{/password}}
-			</ul>
-        </div>
+		<div id="myDiv"></div>
     </div>
  </script>
 
@@ -58,12 +44,12 @@
         <div>
             <h1 class="header"<h1>Scryn</h1></div>
         </div>
-        <div>
-            <ul class="list">
-                <li >
-                    <a href="#connect">New user!</a>
-                </li>
-            </ul>
+        <div id="new">
+				<input type="text" class="form-control" placeholder="votre login" name="user" id="user">
+				<input type="password" class="form-control" placeholder="votre mot de passe" name="password" id="password">
+            	<button onclick="register()" type="submit">New user</button>
+		<div id="link"></div>
+		<div id="name"></div>
         </div>
     </div>
  </script>
@@ -79,15 +65,15 @@
         </div>
     </div>
  </script>
- 
- <script type="text/html" id="tpl-events">
+
+<script type="text/html" id="tpl-events">
     <div>
         <div>
             <h1 class="header"<h1>Scryn</h1></div>
         </div>
+		<div id="test"></div>
 		<button onclick="getEvents()"> Show events </button>
         <div id="events">
         </div>
-		<div class="test1"></div><div class="test2"></div>
     </div>
  </script>

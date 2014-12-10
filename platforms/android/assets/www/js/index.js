@@ -25,10 +25,10 @@ function route() {
             break;
             
         case "#events":
-        	$.get('js/templates.html', function(templates) {
-                var page = $(templates).filter('#tpl-events').html();
-                $('#container').html(page);
-            }, 'html');
+            	$.get('js/templates.html', function(templates) {
+                    var page = $(templates).filter('#tpl-events').html();
+                    $('#container').html(page);
+                }, 'html');
             break;
  
         default:
@@ -66,13 +66,5 @@ function onPhotoDataSuccess(imageData) {
 function onFail(message) {
     alert('Failed to load picture because: ' + message);
 }
-
-//function login() {
-//	var login = $("input[name='login']").val();
-//    var password = $("input[name='password']").val();
-//    $.getJSON("http://api-scryn.herokuapp.com/users.json", {login: login, password: password});
-//}
-
-
 
 route();
