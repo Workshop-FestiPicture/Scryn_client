@@ -5,23 +5,22 @@
 				<a class="navbar-brand" href="#"> Scryn </a>
 			</div>
 		</nav>
-		<div class="list-group>
-	
-			<a class="list-group-item" href="#"></a>
-			<a class="list-group-item" href="#connect" onclick="login()">
- 				<h4 class="list-group-item-heading">Enter</h4>
-			</a>
-			<a class="list-group-item" href="#new">
+
+		<input type="text" class="form-control" placeholder="votre login" name="user" id="user">
+		<input type="password" class="form-control" placeholder="votre mot de passe" name="password" id="password">
+
+ 			<button class="btn btn-default" onclick="login()">
+				<h4 class="list-group-item-heading">Login</h4>
+			</button>
+			<button class="btn btn-default" onclick="register()">
 				<h4 class="list-group-item-heading">
 					<span class="glyphicon glyphicon-user"></span> Create a profile
 				</h4>
-			</a>
+			</button>
 			<a class="list-group-item" href="#photo">
 				<h4 class="list-group-item-heading">Test Photo</h4>
 			</a>
-			<a class="list-group-item" href="#events">
-				<h4 class="list-group-item-heading">Test Events</h4>
-			</a>
+			<div id="status"></div>
 		</div>
 	</div>
 </script>
@@ -36,9 +35,7 @@
 			<button onclick="getEvents()"> Show events </button>
         	<div id="events"></div>
         </div>
-		<div>
-          
-        </div>
+		<div id="myDiv"></div>
     </div>
  </script>
 
@@ -50,7 +47,7 @@
         <div id="new">
 				<input type="text" class="form-control" placeholder="votre login" name="user" id="user">
 				<input type="password" class="form-control" placeholder="votre mot de passe" name="password" id="password">
-            	<button onclick="login()" type="submit">New user</button>
+            	<button onclick="register()" type="submit">New user</button>
 		<div id="link"></div>
 		<div id="name"></div>
         </div>
@@ -63,8 +60,10 @@
             <h1 class="header">Scryn</h1>
         </div>
         <div>
-            <button onclick="capturePhoto()" class="button button-block button-primary">Take Photo</button>
-      		<img src="{{image.src}}" style="max-width: 100%">
+      		<div id="image"></div>
+			<button onclick="capturePicture()" class="btn btn-default">Take a picture</button>
+			<button onclick="sendPicture()" class="btn btn-success" style="display: none" id="send">Send your picture</button>
+			<div id=test52></div>
         </div>
     </div>
  </script>
@@ -74,10 +73,9 @@
         <div>
             <h1 class="header"<h1>Scryn</h1></div>
         </div>
-		<div id="user"></div>
+		<div id="test"></div>
 		<button onclick="getEvents()"> Show events </button>
         <div id="events">
         </div>
-		<div class="test1"></div><div class="test2"></div>
     </div>
  </script>

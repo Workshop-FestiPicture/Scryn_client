@@ -1,6 +1,8 @@
 function event(i){
+	document.getElementById("test").innerHTML = "<p>i'm here</p>";
+
 	$.get('js/templates.html', function(templates) {
-        var page = $(templates).filter('#tpl-event-'+i+'').html();
+        var page = $(templates).filter('#tpl-event?'+i+'').html();
         $('#container').html(page);
     }, 'html');
 }
@@ -26,7 +28,6 @@ function getEvents() {
 //			document.getElementById("user").innerHTML = "<p> Hello " + GetUserName() + "</p>";
 			document.getElementById("events").innerHTML = out;
 
-			// document.getElementById("events").innerHTML = myArr[0].name;
 		}
 	}
 	xmlhttp.open("GET", "http://api-scryn.herokuapp.com/events.json", true);

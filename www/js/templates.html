@@ -6,23 +6,40 @@
 			</div>
 		</nav>
 
-		<input type="text" class="form-control" placeholder="votre login" name="user" id="user">
-		<input type="password" class="form-control" placeholder="votre mot de passe" name="password" id="password">
-
+		<input type="text" class="form-control" placeholder="votre login" name="user" id="user" style="margin-left: auto; margin-right: auto; width: 70%">
+		<input type="password" class="form-control" placeholder="votre mot de passe" name="password" id="password" style="margin-left: auto; margin-right: auto; width: 70%">
+		
+		<div style="margin-left: auto; margin-right: auto; width: 40%;">
  			<button class="btn btn-default" onclick="login()">
-				<h4 class="list-group-item-heading">Login</h4>
+				<h4>Login</h4>
 			</button>
+		</div>
+		<div style="margin-left: auto; margin-right: auto; width: 40%;">
 			<button class="btn btn-default" onclick="register()">
-				<h4 class="list-group-item-heading">
-					<span class="glyphicon glyphicon-user"></span> Create a profile
+				<h4>
+					<span class="glyphicon glyphicon-user"></span> Sign Up
 				</h4>
 			</button>
-			<a class="list-group-item" href="#photo">
-				<h4 class="list-group-item-heading">Test Photo</h4>
-			</a>
+		</div>
+		<a class="list-group-item" href="#photo">
+			<h4 class="list-group-item-heading">Test Photo</h4>
+		</a>
 			<div id="status"></div>
 		</div>
+<div id="session"></div>
 	</div>
+</script>
+
+<script type="text/html" id="tpl-home-logged">
+	<div>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"> Scryn </a>
+			</div>
+		</nav>
+<div id="session"></div>
+<button class="btn btn-default" onclick='window.location="#events"'>Choose an event</button>
+<button class="btn btn-small btn-danger" onclick="logOut()" style="position:fixed; padding: 2px; bottom:0px;">Log Out</button>
 </script>
 
 <script type="text/html" id="tpl-connect">
@@ -60,8 +77,10 @@
             <h1 class="header">Scryn</h1>
         </div>
         <div>
-            <button onclick="capturePhoto()" class="button button-block button-primary">Take Photo</button>
-      		<img src="{{image.src}}" style="max-width: 100%">
+      		<div id="image"></div>
+			<button onclick="capturePicture()" class="btn btn-default">Take a picture</button>
+			<button onclick="sendPicture()" class="btn btn-success" style="display: none" id="send">Send your picture</button>
+			<div id=test52></div>
         </div>
     </div>
  </script>
@@ -71,9 +90,19 @@
         <div>
             <h1 class="header"<h1>Scryn</h1></div>
         </div>
-		<div id="test"></div>
 		<button onclick="getEvents()"> Show events </button>
         <div id="events">
+        </div>
+    </div>
+ </script>
+ 
+ <script type="text/html" id="tpl-event">
+    <div>
+        <div>
+            <h1 class="header"<h1>Scryn</h1></div>
+        </div>
+		
+        <div id="event">
         </div>
     </div>
  </script>

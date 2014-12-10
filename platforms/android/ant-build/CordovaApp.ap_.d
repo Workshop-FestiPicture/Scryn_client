@@ -56,6 +56,7 @@ C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\asset
 C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\assets\www\js\jquery-2.1.1.min.js \
 C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\assets\www\js\login.js \
 C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\assets\www\js\npm.js \
+C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\assets\www\js\picture.js \
 C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\assets\www\js\templates.html \
 C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 C:\Users\A Delaunay\Desktop\festipicture\Code\work\scryn\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \

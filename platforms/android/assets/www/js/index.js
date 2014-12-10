@@ -54,17 +54,18 @@ function onDeviceReady() {
     destinationType = navigator.camera.DestinationType;
 }
  
-function capturePhoto() {
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 50, destinationType: Camera.DestinationType.DATA_URL});
-}
- 
-function onPhotoDataSuccess(imageData) {
-	var image = document.getElementById('myImage');
-    image.src = "data:image/jpeg;base64," + imageData;
-}
- 
-function onFail(message) {
-    alert('Failed to load picture because: ' + message);
-}
+function capturePicture() {
+    navigator.camera.getPicture(navigator.camera.getPicture(function(imageURI) {
+    	
+    	document.getElementById("send").style.display = 'block';
 
+        document.getElementById("image").innerHTML = '<img id="img" src="data:image/jpeg;base64,'+imageURI+'" style="max-width: 100%">';
+
+      }, function(err) {
+
+    	  alert('Failed to load picture because: ' + message);
+
+      }, {quality: 50, destinationType: Camera.DestinationType.DATA_URL}));
+}
+ 
 route();
