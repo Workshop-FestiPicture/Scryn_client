@@ -30,17 +30,19 @@ function route() {
 			$('#container').html(page);
 		}, 'html');
 		break;
-		
+
 	case "#event":
 		event_id = window.location.search.substr(1);
-		sessionStorage['eventId']=event_id;
-		var page = $(templates).filter('#tpl-event').html();
-		$('#container').html(page);
+		sessionStorage['eventid'] = parseInt(event_id)	;
+		$.get('js/templates.html', function(templates) {
+			var page = $(templates).filter('#tpl-event').html();
+			$('#container').html(page);
 		}, 'html');
+		getEventInfo();
 		break;
-		
+
 	default:
-		unlogged = sessionStorage['username'] == "null";
+		unlogged = sessionStorage['userid'] == "null";
 		if (unlogged) {
 			$.get('js/templates.html', function(templates) {
 				page = $(templates).filter('#tpl-home').html();
@@ -71,11 +73,13 @@ function onDeviceReady() {
 }
 
 function capturePicture() {
+	sessionStorage['imageURI']=null;
 	navigator.camera
 			.getPicture(navigator.camera
 					.getPicture(
 							function(imageURI) {
-
+								sessionStorage['imageURI']=imageURI;
+								document.getElementById("test").innerHTML="<p>"+sessionStorage['imageURI']+"</p>";
 								document.getElementById("send").style.display = 'block';
 
 								document.getElementById("image").innerHTML = '<img id="img" src="data:image/jpeg;base64,'
@@ -90,7 +94,7 @@ function capturePicture() {
 
 							},
 							{
-								quality : 50,
+								quality : 1,
 								destinationType : Camera.DestinationType.DATA_URL
 							}));
 }

@@ -6,12 +6,13 @@ function register() {
 
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			sessionStorage['username'] = user;
+			var arr = JSON.parse(xmlhttp.responseText);
+			sessionStorage['userid'] = arr.id;
 			window.location="#events";
 		}
 	}
 
-	xmlhttp.open("POST", "http://api-scryn.herokuapp.com/users", true);
+	xmlhttp.open("POST", "http://api-scryn.herokuapp.com/users.json", true);
 	xmlhttp.setRequestHeader("Content-type", "application/json");
 	xmlhttp.setRequestHeader("Accept", "application/json");
 	xmlhttp.send('{"name":"' + user + '", "password":"' + password + '"}');
@@ -26,10 +27,9 @@ function login() {
 	
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			var arr = JSON.parse(xmlhttp.responseText)
+			var arr = JSON.parse(xmlhttp.responseText);
 			if (arr.ok) {
-//				document.getElementById("status").innerHTML = "<p>Welcome buddy!</p>";
-				sessionStorage['username'] = user;
+				sessionStorage['userid'] = arr.user_id;
 				window.location="#events";
 			} else {
 				document.getElementById("status").innerHTML = "<p>Fuck off!</p>";
@@ -45,6 +45,6 @@ function login() {
 }
 
 function logOut(){
-	sessionStorage['username'] = null;
+	sessionStorage['userid'] = null;
 	window.location="#";
 }
