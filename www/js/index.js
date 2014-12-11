@@ -82,8 +82,7 @@ function capturePicture() {
 								document.getElementById("test").innerHTML="<p>"+sessionStorage['imageURI']+"</p>";
 								document.getElementById("send").style.display = 'block';
 
-								document.getElementById("image").innerHTML = '<img id="img" src="data:image/jpeg;base64,'
-										+ imageURI
+								document.getElementById("image").innerHTML = '<img id="img" src="'+ imageURI
 										+ '" style="max-width: 100%">';
 
 							},
@@ -95,7 +94,8 @@ function capturePicture() {
 							},
 							{
 								quality : 1,
-								destinationType : Camera.DestinationType.DATA_URL
+								destinationType : Camera.DestinationType.FILE_URI
+								
 							}));
 }
 
