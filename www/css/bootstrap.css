@@ -295,7 +295,7 @@ th {
 .glyphicon-minus:before {
   content: "\2212";
 }
-.glyphicon-cloud:before {
+.glyphicon-cloud:befnavbar_bore {
   content: "\2601";
 }
 .glyphicon-envelope:before {
@@ -3845,6 +3845,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
+    text-align: center;
   }
 }
 .navbar-collapse {
@@ -3946,6 +3947,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
+  text-align: center;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {

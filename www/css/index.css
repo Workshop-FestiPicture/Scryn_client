@@ -98,3 +98,7 @@
     vertical-align:center;
     color: black;
 }
+
+.navbar-header {
+	text-align: center;
+}

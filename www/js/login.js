@@ -32,7 +32,7 @@ function login() {
 				sessionStorage['userid'] = arr.user_id;
 				window.location="#events";
 			} else {
-				document.getElementById("status").innerHTML = "<p>Fuck off!</p>";
+				document.getElementById("status").innerHTML = "<p>Wrong password!</p>";
 			}
 			
 		}
